@@ -1,7 +1,6 @@
 chrome.runtime.onMessage.addListener(highlightSelection);
 
 function highlightSelection(request,sender,sendResponse){
-    console.log('hello');
     var x=window.getSelection();
     ele= document.createElement('span');
     
@@ -13,7 +12,6 @@ function highlightSelection(request,sender,sendResponse){
         ele.appendChild(documentFragment);
         range.insertNode(ele);
         window.localStorage.setItem(request.page_url,document.getElementsByTagName("body")[0].innerHTML);
-        window.localStorage.getItem(request.page_url)
     }
 }
 
